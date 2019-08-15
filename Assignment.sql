@@ -1,0 +1,18 @@
+DROP DATABASE IF EXISTS Assignment3;
+CREATE DATABASE Assignment3;
+USE Assignment3;
+
+CREATE TABLE User
+(
+		userID INT(11) PRIMARY KEY AUTO_INCREMENT,
+        username VARCHAR(50) NOT NULL,
+        password VARCHAR(50) NULL
+);
+
+CREATE TABLE SearchResult
+(
+		SearchResultID INT(11) PRIMARY KEY AUTO_INCREMENT,
+		userID INT(11) NOT NULL,
+        SearchValue VARCHAR(50) NOT NULL,
+		FOREIGN KEY(userID) REFERENCES User(userID)
+);
